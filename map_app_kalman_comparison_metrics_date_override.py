@@ -203,6 +203,11 @@ if update and models_ok:
 
         folium.LayerControl().add_to(m)
 
+        # =====================================================
+        # ✅ ADDED: Saves the map as index.html (local only!)
+        # =====================================================
+        m.save("index.html")   # This creates a file in the current folder
+
         # Store the map HTML and other data in session state
         st.session_state['map_data'] = {
             'html': m._repr_html_(),
